@@ -14,13 +14,13 @@ function App() {
   const [bombs, setBombs] = useState(10)
   const [lost, setLost] = useState(false)
 
-  const gettersSetters = {currentBoard, setCurrentBoard, rows, setRows, cols, setCols}
+  const gettersSetters = {currentBoard, setCurrentBoard, rows, setRows, cols, setCols, bombs, setBombs }
 
   useEffect(()=>{
     const initialBoard = boardSetup(rows, cols, bombs);
     console.log('init:', initialBoard)
     setCurrentBoard(initialBoard);
-  }, [rows])
+  }, [bombs])
 
   return (
     <MinesweeperContext.Provider value={gettersSetters}>
